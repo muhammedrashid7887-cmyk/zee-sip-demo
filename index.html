@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zee Sip | Pulpy Grape — Pure Fruit Drink</title>
+  <meta name="description" content="Discover Zee Sip Pulpy Grape. 100% natural cold-pressed grape drink with real fruit pulp. Premium 350ml bottle.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <!-- Minimalist Brand Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="Zee Sip Home">
+        <span class="logo-mark">ZEE</span>
+        <span class="logo-dot"></span>
+        <span class="logo-sub">SIP</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active">Experience</a>
+        <a href="#specs" class="nav-link">Craft</a>
+        <a href="#taste" class="nav-link">Taste Notes</a>
+      </nav>
+
+      <div class="nav-actions">
+        <span class="badge-volume">350ml • 100% Natural</span>
+        <button id="quick-order-nav" class="btn-nav-cta">Order Now</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Scroll-Driven Hero Section -->
+  <main>
+    <section id="hero" class="hero-scroll-track" aria-label="Product Showcase">
+      <div class="hero-sticky-stage">
+        <!-- Cinematic Edge-to-Edge Vineyard Atmospheric Backdrop -->
+        <div class="hero-backdrop" aria-hidden="true">
+          <div class="vineyard-ambient-layer"></div>
+          <div class="cinematic-sunbeam"></div>
+          <div class="cinematic-vignette"></div>
+        </div>
+
+        <!-- Full-Focus Product Animation Stage: Clean, Centered Product -->
+        <div class="hero-stage-container">
+
+          <!-- Subtle Minimalist Top Eyebrow Text -->
+          <div class="hero-top-eyebrow" aria-label="Brand Quality Guarantee">
+            <span class="hero-eyebrow-text">PREMIUM QUALITY • AUTHENTIC FLAVOUR</span>
+          </div>
+
+          <!-- Centered Product Canvas (Clean, large, zero text overlap) -->
+          <div id="productCanvasWrapper" class="product-canvas-wrapper">
+            <canvas id="productCanvas" class="product-canvas" width="1920" height="1080"></canvas>
+          </div>
+
+          <!-- Bottom Order & Reserve Popup (reveals smoothly at bottom when animation completes) -->
+          <div id="videoCompletionPrompt" class="video-completion-prompt" aria-hidden="true" role="region" aria-label="Reserve Zee Sip">
+            <div class="order-popup-card">
+              <div class="order-popup-badge">
+                <span class="dot-live"></span>
+                <span>ZEE SIP • 350ML RESERVE</span>
+              </div>
+              <div class="order-popup-content">
+                <div class="order-popup-text">
+                  <h2 class="order-popup-title">Reserve Your Zee Sip</h2>
+                  <p class="order-popup-desc">100% natural cold-pressed Concord grape drink with live fruit pulp.</p>
+                </div>
+                <div class="order-popup-actions">
+                  <button id="promptReplayBtn" class="btn-popup-replay" aria-label="Replay animation">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                      <path d="M3 3v5h5"/>
+                    </svg>
+                    <span>Replay</span>
+                  </button>
+                  <button id="orderNowBtn" class="btn-popup-order" aria-label="Open order form">
+                    <span>Order Now</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scroll Cue & Live Status Strip (always visible at bottom while exploring) -->
+          <div id="heroStatusStrip" class="hero-status-strip">
+            <div class="product-tag">
+              <span class="dot-live"></span>
+              <span class="tag-title">Zee Sip Pulpy Grape</span>
+              <span class="tag-divider">/</span>
+              <span class="tag-meta">350ml Reserve Glass</span>
+            </div>
+
+            <div id="scrollCue" class="scroll-cue">
+              <span id="scrollCueText" class="scroll-cue-text">Scroll to explore</span>
+              <div class="scroll-indicator-bar">
+                <div id="scrollProgressBar" class="scroll-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Responsive Demo Order Modal -->
+    <div id="orderModal" class="order-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="order-modal-container">
+        <!-- Close Button -->
+        <button id="closeOrderModal" class="btn-modal-close" aria-label="Close order form">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <div class="modal-header">
+          <div class="modal-brand-tag">ZEE SIP • PULPY GRAPE</div>
+          <h2 id="modalTitle" class="modal-title">Place Your Order</h2>
+          <p class="modal-subtitle">Fresh cold-pressed natural fruit drink delivered to your doorstep.</p>
+        </div>
+
+        <!-- Clearly visible Frontend Demo Disclaimer -->
+        <div class="demo-system-banner" role="status">
+          <div class="demo-banner-indicator"></div>
+          <div class="demo-banner-content">
+            <span class="demo-banner-badge">Frontend Prototype</span>
+            <p class="demo-banner-text">This is an interactive UI demo. No payment is taken and no order is sent to a production backend.</p>
+          </div>
+        </div>
+
+        <!-- Order Form -->
+        <form id="orderForm" class="order-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="custName" class="form-label">Full Name <span class="required">*</span></label>
+              <input type="text" id="custName" name="customerName" class="form-input" placeholder="e.g. Rahul Sharma" required autocomplete="name" aria-describedby="nameError">
+              <span class="form-error" id="nameError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="custPhone" class="form-label">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="custPhone" name="customerPhone" class="form-input" placeholder="e.g. +91 98765 43210" required autocomplete="tel" aria-describedby="phoneError">
+              <span class="form-error" id="phoneError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productSelect" class="form-label">Product Selection</label>
+              <div class="select-wrapper">
+                <select id="productSelect" name="productPack" class="form-select">
+                  <option value="single" data-price="65">Single Bottle (350ml) — ₹65</option>
+                  <option value="pack6" data-price="360" selected>Pack of 6 Bottles (Box) — ₹360</option>
+                  <option value="pack12" data-price="690">Party Crate (12 Bottles) — ₹690</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="itemQty" class="form-label">Quantity</label>
+              <div class="qty-stepper">
+                <button type="button" id="qtyMinus" class="btn-qty" aria-label="Decrease quantity">−</button>
+                <input type="number" id="itemQty" name="quantity" class="qty-input" value="1" min="1" max="50" readonly aria-label="Selected quantity" aria-live="polite">
+                <button type="button" id="qtyPlus" class="btn-qty" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="custAddress" class="form-label">Delivery Address <span class="required">*</span></label>
+            <textarea id="custAddress" name="deliveryAddress" class="form-textarea" rows="2" placeholder="House / Flat No., Street, City, Pincode" required aria-describedby="addressError"></textarea>
+            <span class="form-error" id="addressError" role="alert"></span>
+          </div>
+
+          <!-- Total Calculation Bar -->
+          <div class="order-summary-strip">
+            <span class="summary-label">Estimated Total:</span>
+            <span id="orderTotalDisplay" class="summary-total" aria-live="polite">₹360</span>
+          </div>
+
+          <button type="submit" id="submitOrderBtn" class="btn-submit-order">
+            <span>Submit Demo Order</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Order Success State (Hidden until demo submit) -->
+        <div id="orderSuccessState" class="order-success-state hidden">
+          <div class="success-icon-wrap">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#22C55E" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h3 class="success-title">Demo Order Received!</h3>
+          <p class="success-sub">Thank you for testing the Zee Sip experience.</p>
+          
+          <div class="success-summary-box">
+            <div class="summary-item">
+              <span class="summary-item-label">Customer:</span>
+              <span id="summaryName" class="summary-item-val">—</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Contact:</span>
+              <span id="summaryPhone" class="summary-item-val">—</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Package:</span>
+              <span id="summaryProduct" class="summary-item-val">—</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Total:</span>
+              <span id="summaryTotal" class="summary-item-val">—</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Address:</span>
+              <span id="summaryAddress" class="summary-item-val">—</span>
+            </div>
+          </div>
+
+          <div class="demo-final-note">
+            ℹ️ <em>Frontend Demonstration Notice: No charge has been made and no production order was placed.</em>
+          </div>
+
+          <div class="success-actions">
+            <button type="button" id="newOrderBtn" class="btn-order-primary">Place Another Order</button>
+            <button type="button" id="closeSuccessBtn" class="btn-order-secondary">Back to Website</button>
+            <button type="button" id="successReplayBtn" class="btn-order-secondary">Replay Commercial</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- High-Resolution Visual Craft Gallery -->
+    <section id="specs" class="craft-gallery-section" aria-label="Product Craftsmanship">
+      <div class="section-header-wrap">
+        <span class="section-meta">THE BOTTLING PROCESS</span>
+        <h2 class="section-heading">Crafted with vineyard integrity.</h2>
+        <p class="section-subheading">From hand-selected Concord vines to an uncompromised cold-bottling line.</p>
+      </div>
+
+      <div class="craft-cards-grid">
+        <!-- Visual Card 1: Sunlight & Harvest -->
+        <article class="craft-card">
+          <div class="craft-card-media">
+            <img src="assets/vineyard-splash-hero.png" alt="Zee Sip bottle nestled in vineyard sunlight with water droplets and fresh grapes" class="craft-img" loading="lazy">
+            <div class="craft-media-gradient"></div>
+          </div>
+          <div class="craft-card-body">
+            <span class="craft-tag">01 / HARVEST</span>
+            <h3 class="craft-title">Sun-Ripened Vines</h3>
+            <p class="craft-desc">Culled at peak sweetness in temperate valley vineyards to capture rich polyphenols and natural grape aromatics.</p>
+          </div>
+        </article>
+
+        <!-- Visual Card 2: Pure Pulpy Splash -->
+        <article class="craft-card">
+          <div class="craft-card-media">
+            <img src="assets/product-splash-pour.png" alt="Dynamic juice splash around Zee Sip Pulpy Grape bottle" class="craft-img" loading="lazy">
+            <div class="craft-media-gradient"></div>
+          </div>
+          <div class="craft-card-body">
+            <span class="craft-tag">02 / TEXTURE</span>
+            <h3 class="craft-title">Live Crushed Pulp</h3>
+            <p class="craft-desc">Real fruit cells gently suspended in every bottle. No clarifying filters, ensuring a satisfying natural mouthfeel.</p>
+          </div>
+        </article>
+
+        <!-- Visual Card 3: Cold Extraction & Purity -->
+        <article class="craft-card">
+          <div class="craft-card-media">
+            <img src="assets/product-dark-studio.png" alt="Zee Sip bottle on dark reflective slate studio background" class="craft-img" loading="lazy">
+            <div class="craft-media-gradient"></div>
+          </div>
+          <div class="craft-card-body">
+            <span class="craft-tag">03 / PURITY</span>
+            <h3 class="craft-title">Cold Processed & Chilled</h3>
+            <p class="craft-desc">Bottled cold without heat pasteurization. Free of preservatives, artificial food dyes, and corn syrup.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sensory Tasting Notes & Ingredients Section -->
+    <section id="taste" class="taste-profile-section" aria-label="Sensory Profile">
+      <div class="taste-container">
+        <div class="taste-column-left">
+          <span class="section-meta">TASTING MATRIX</span>
+          <h2 class="section-heading">Rich, velvety, and thirst-quenching.</h2>
+          <p class="section-subheading">A deep ruby Concord profile balanced by gentle fruit acidity and real pulp body.</p>
+
+          <div class="profile-bars">
+            <div class="profile-bar-item">
+              <div class="bar-labels">
+                <span class="bar-title">Natural Sweetness</span>
+                <span class="bar-score">4.8 / 5.0</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width: 96%;"></div></div>
+            </div>
+
+            <div class="profile-bar-item">
+              <div class="bar-labels">
+                <span class="bar-title">Pulp Body & Texture</span>
+                <span class="bar-score">4.9 / 5.0</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width: 98%;"></div></div>
+            </div>
+
+            <div class="profile-bar-item">
+              <div class="bar-labels">
+                <span class="bar-title">Crisp Acidity</span>
+                <span class="bar-score">3.4 / 5.0</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width: 68%;"></div></div>
+            </div>
+
+            <div class="profile-bar-item">
+              <div class="bar-labels">
+                <span class="bar-title">Serving Chill (Ideal 4°C)</span>
+                <span class="bar-score">5.0 / 5.0</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="taste-column-right">
+          <div class="nutrition-card">
+            <h3 class="nutrition-heading">Clean Formulation</h3>
+            <div class="nutrition-grid">
+              <div class="nutrition-metric">
+                <span class="metric-val">100%</span>
+                <span class="metric-lbl">Natural Fruit Juice</span>
+              </div>
+              <div class="nutrition-metric">
+                <span class="metric-val">0g</span>
+                <span class="metric-lbl">Added Refined Sugar</span>
+              </div>
+              <div class="nutrition-metric">
+                <span class="metric-val">350ml</span>
+                <span class="metric-lbl">Glass Bottle</span>
+              </div>
+              <div class="nutrition-metric">
+                <span class="metric-val">0%</span>
+                <span class="metric-lbl">Chemical Preservatives</span>
+              </div>
+            </div>
+
+            <div class="ingredient-list">
+              <span class="ing-title">Ingredients:</span>
+              <p class="ing-text">Pure Cold-Pressed Concord Grape Juice, Real Fruit Pulp (12%), Vitamin C (Ascorbic Acid), Natural Purified Spring Water.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimalist Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-mark">ZEE SIP</span>
+        <span class="footer-sub">Premium Pulpy Fruit Drink</span>
+      </div>
+      <div class="footer-copy">
+        © 2026 Zee Sip Beverages. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
